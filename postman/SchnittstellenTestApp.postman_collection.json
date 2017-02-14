@@ -1,0 +1,74 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SchnittstellenTestApp",
+		"_postman_id": "ce329489-f554-942e-eab6-9bd28190e140",
+		"description": "Postman testsuit für die Schnittstellen Test App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "REST V1",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "REST V2",
+			"description": "",
+			"item": [
+				{
+					"name": "get Auth Token (http://localhost:9202/ipi-vw/rest/v2/oauth/token)",
+					"request": {
+						"url": "http://localhost:9202/ipi-vw/rest/v2/oauth/token",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic Y2xpZW50OnNlY3JldA==",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "grant_type=password&username=admin&password=admin"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/sta/rest/v2/entities/schnittstellentestapp$Betriebsstaette",
+					"request": {
+						"url": "http://localhost:8080/sta/rest/v2/entities/schnittstellentestapp$Betriebsstaette",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 614c6f94-8714-4a17-a86e-6ddfa6576063",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Betriebstätten abfrage gegen \"trunk\""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
