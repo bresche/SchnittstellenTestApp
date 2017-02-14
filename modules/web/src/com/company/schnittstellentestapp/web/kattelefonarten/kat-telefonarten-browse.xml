@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.schnittstellentestapp.web.kattelefonarten.KatTelefonartenBrowse"
+        focusComponent="katTelefonartensTable"
+        lookupComponent="katTelefonartensTable"
+        messagesPack="com.company.schnittstellentestapp.web.kattelefonarten">
+    <dsContext>
+        <groupDatasource id="katTelefonartensDs"
+                         class="com.company.schnittstellentestapp.entity.KatTelefonarten"
+                         view="_local">
+            <query>
+                <![CDATA[select e from schnittstellentestapp$KatTelefonarten e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="katTelefonartensTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="katTelefonartensTable"
+                datasource="katTelefonartensDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="katTelefonartensTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="bezeichnung"/>
+                <column id="code"/>
+            </columns>
+            <rows datasource="katTelefonartensDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="katTelefonartensTable.create"/>
+                <button id="editBtn"
+                        action="katTelefonartensTable.edit"/>
+                <button id="removeBtn"
+                        action="katTelefonartensTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

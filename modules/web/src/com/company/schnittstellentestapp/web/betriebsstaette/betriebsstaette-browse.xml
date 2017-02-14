@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.schnittstellentestapp.web.betriebsstaette.BetriebsstaetteBrowse"
+        focusComponent="betriebsstaettesTable"
+        lookupComponent="betriebsstaettesTable"
+        messagesPack="com.company.schnittstellentestapp.web.betriebsstaette">
+    <dsContext>
+        <groupDatasource id="betriebsstaettesDs"
+                         class="com.company.schnittstellentestapp.entity.Betriebsstaette"
+                         view="_local">
+            <query>
+                <![CDATA[select e from schnittstellentestapp$Betriebsstaette e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="betriebsstaettesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="betriebsstaettesTable"
+                datasource="betriebsstaettesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="betriebsstaettesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="adresse"/>
+                <column id="telefonnummer"/>
+                <column id="bezeichnung"/>
+            </columns>
+            <rows datasource="betriebsstaettesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="betriebsstaettesTable.create"/>
+                <button id="editBtn"
+                        action="betriebsstaettesTable.edit"/>
+                <button id="removeBtn"
+                        action="betriebsstaettesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>
