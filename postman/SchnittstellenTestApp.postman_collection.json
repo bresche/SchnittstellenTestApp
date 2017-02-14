@@ -10,7 +10,30 @@
 		{
 			"name": "REST V1",
 			"description": "",
-			"item": []
+			"item": [
+				{
+					"name": "http://localhost:8080/sta-portal/api/login?u=admin&p=admin",
+					"request": {
+						"url": "http://localhost:8080/sta-portal/api/login?u=admin&p=admin",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "gettig userSessionId"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/sta-portal/api/query.json?e=sales$Customer&q=select+c+from+sales$Customer+c&s=748e5d3f-1eaf-4b38-bf9d-8d838587367d&view=_local",
+					"request": {
+						"url": "http://localhost:8080/sta-portal/api/query.json?e=schnittstellentestapp$Betriebsstaette&q=select+c+from+schnittstellentestapp$Betriebsstaette+c&s=d87002ff-d6a3-26cb-68ad-8dd738ed7ca0&view=_local",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "get betriebesstaetten"
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "REST V2",
